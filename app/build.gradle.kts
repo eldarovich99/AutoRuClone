@@ -1,7 +1,19 @@
 plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
+    id("io.gitlab.arturbosch.detekt")
 }
+
+tasks.register<io.gitlab.arturbosch.detekt.Detekt>("detektAll") {
+    parallel = true
+    setSource(projectDir)
+    include("**/*.kt", "**/*.kts")
+    exclude("**/resources/**", "**/build/**")
+    config.setFrom(project.file("config/detekt/detekt.yml"))
+}
+
+val appVersion by extra("1.0.3")
+val appName by extra("1Coin")
 
 android {
     namespace = "ru.uzbekovve.autopl"
@@ -63,4 +75,6 @@ dependencies {
     androidTestImplementation ("androidx.compose.ui:ui-test-junit4:$composeUiVersion")
     debugImplementation ("androidx.compose.ui:ui-tooling:$composeUiVersion")
     debugImplementation ("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
+
+    detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
 }
