@@ -77,4 +77,17 @@ dependencies {
     debugImplementation ("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
 
     detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
+
+    // Coroutines
+    val coroutinesVersion = "1.7.0-Beta"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+
+    // Dagger
+    val daggerVersion = "2.45"
+    implementation("com.google.dagger:dagger:$daggerVersion")
+    annotationProcessor("com.google.dagger:dagger-compiler:$daggerVersion")
+    implementation("com.google.dagger:dagger-android:$daggerVersion")
+    implementation("com.google.dagger:dagger-android-support:$daggerVersion")
+    annotationProcessor ("com.google.dagger:dagger-android-processor:$daggerVersion")
 }
