@@ -5,15 +5,22 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.*
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-abstract class MviFragment<VM : BaseViewModel<S, *>, S : IState> :
-    Fragment() {
+abstract class MviFragment<SF : UiEffect, VM : BaseViewModel<S, *, SF>, S : IState>(
+    @LayoutRes layoutRes: Int,
+) :
+    Fragment(layoutRes) {
 
     protected abstract val viewModel: VM
 
@@ -32,12 +39,16 @@ abstract class MviFragment<VM : BaseViewModel<S, *>, S : IState> :
                 renderState(it)
             }.collect()
         }
-        onViewCreated()
+        launchWhenResumed {
+            viewModel.uiEffectsFlow.onEach { uiEffect ->
+                renderUiEffect(uiEffect)
+            }.collect()
+        }
         viewModel.onInitialized()
     }
 
-    abstract fun onViewCreated()
     open fun renderState(state: S) {}
+    open fun renderUiEffect(effects: SF) {}
 
     protected inline fun <reified T : ViewModel> ViewModelProvider.Factory.createOfOwner(
         viewModelStoreOwner: ViewModelStoreOwner,
