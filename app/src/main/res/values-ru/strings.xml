@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">Shout</string>
+    <string name="app_name_dot">Shout.</string>
 
     <string name="shout_is">Shout - это…</string>
     <string name="shout_description_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="shout_description_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="shout_description_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="next_button">Далее</string>
-
+    <string name="sign_in_with_google">Авторизоваться через Google</string>
+    <string name="your_username">Ваш псевдоним</string>
+    <string name="type_username">Напишите псевдоним…</string>
+    <string name="done">Готово</string>
 </resources>

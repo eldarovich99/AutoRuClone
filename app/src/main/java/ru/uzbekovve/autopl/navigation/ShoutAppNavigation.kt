@@ -8,9 +8,11 @@ import ru.uzbekovve.autopl.navigation.destination.allChats
 import ru.uzbekovve.autopl.navigation.destination.auth
 import ru.uzbekovve.autopl.navigation.destination.chat
 import ru.uzbekovve.autopl.navigation.destination.main
+import ru.uzbekovve.autopl.navigation.destination.navigateSignIn
 import ru.uzbekovve.autopl.navigation.destination.navigateToAllChats
 import ru.uzbekovve.autopl.navigation.destination.navigateToAuth
 import ru.uzbekovve.autopl.navigation.destination.navigateToChat
+import ru.uzbekovve.autopl.navigation.destination.signIn
 
 @Composable
 fun ShoutAppNavigation(
@@ -18,6 +20,9 @@ fun ShoutAppNavigation(
 ) {
     NavHost(navController = navController, startDestination = GUIDE_SCREEN) {
         main(onLastFurtherClick = {
+            navController.navigateSignIn()
+        })
+        signIn(onSignInCompleted = {
             navController.navigateToAuth()
         })
         auth(onAuthCompleted = {

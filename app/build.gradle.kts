@@ -2,6 +2,7 @@ plugins {
     id ("com.android.application")
     id ("org.jetbrains.kotlin.android")
     id("io.gitlab.arturbosch.detekt")
+    id("androidx.navigation.safeargs")
 }
 
 tasks.register<io.gitlab.arturbosch.detekt.Detekt>("detektAll") {

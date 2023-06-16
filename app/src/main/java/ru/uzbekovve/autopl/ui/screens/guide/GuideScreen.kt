@@ -18,6 +18,7 @@ import org.koin.androidx.compose.koinViewModel
 import ru.uzbekovve.autopl.R
 import ru.uzbekovve.autopl.ui.custom.GuideIndicator
 import ru.uzbekovve.autopl.ui.custom.ShoutButton
+import ru.uzbekovve.autopl.ui.custom.SimpleToolbar
 
 @Composable
 fun GuideScreen(
@@ -30,11 +31,7 @@ fun GuideScreen(
     Column(
         modifier = modifier.fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(
-            text = stringResource(id = R.string.shout_is),
-            style = MaterialTheme.typography.h2,
-            modifier = Modifier.padding(top = 24.dp)
-        )
+        SimpleToolbar(modifier = modifier, stringRes = R.string.shout_is)
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
             Text(
                 text = stringResource(id = R.string.shout_description_1),
