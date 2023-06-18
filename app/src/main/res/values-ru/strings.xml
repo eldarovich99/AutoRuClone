@@ -12,6 +12,11 @@
     <string name="type_username">Напишите псевдоним…</string>
     <string name="done">Готово</string>
     <string name="chats">Чаты</string>
-    <string name="profile">Профиль</string>
     <string name="avatar">Аватар</string>
+
+    <!-- Profile screen -->
+    <string name="profile">Профиль</string>
+    <string name="profile_change_nickname">Изменить никнейм</string>
+    <string name="profile_about_app">О приложении</string>
+    <string name="profile_logout">Выйти из аккаунта</string>
 </resources>

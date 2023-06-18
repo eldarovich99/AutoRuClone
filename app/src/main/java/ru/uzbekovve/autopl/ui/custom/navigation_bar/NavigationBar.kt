@@ -2,6 +2,7 @@ package ru.uzbekovve.autopl.ui.custom.navigation_bar
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,11 @@ import ru.uzbekovve.autopl.R
 import ru.uzbekovve.autopl.ui.theme.Grey
 
 @Composable
-fun NavigationBar(modifier: Modifier, selectedTab: NavigationTab) {
+fun NavigationBar(
+    modifier: Modifier,
+    selectedTab: NavigationTab,
+    onTabClicked: (NavigationTab) -> Unit
+) {
     Column(modifier) {
         Box(
             modifier = Modifier
@@ -36,7 +41,11 @@ fun NavigationBar(modifier: Modifier, selectedTab: NavigationTab) {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Image(
-                modifier = Modifier.size(25.dp),
+                modifier = Modifier
+                    .size(25.dp)
+                    .clickable {
+                        onTabClicked.invoke(NavigationTab.Chats)
+                    },
                 painter = painterResource(id = R.drawable.ic_chat),
                 colorFilter = ColorFilter.tint(if (selectedTab == NavigationTab.Chats) Color.Black else Grey),
                 contentDescription = stringResource(
@@ -44,7 +53,11 @@ fun NavigationBar(modifier: Modifier, selectedTab: NavigationTab) {
                 )
             )
             Image(
-                modifier = Modifier.size(25.dp),
+                modifier = Modifier
+                    .size(25.dp)
+                    .clickable {
+                        onTabClicked.invoke(NavigationTab.Profile)
+                    },
                 painter = painterResource(id = R.drawable.ic_profile),
                 colorFilter = ColorFilter.tint(if (selectedTab == NavigationTab.Profile) Color.Black else Grey),
                 contentDescription = stringResource(

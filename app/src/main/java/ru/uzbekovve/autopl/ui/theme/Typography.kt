@@ -33,6 +33,12 @@ val Typography = Typography(
         fontWeight = FontWeight.W700,
         color = Color.Black
     ),
+    h4 = TextStyle(
+        fontFamily = fontsManrope,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.W700,
+        color = Color.Black
+    ),
     button = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 18.sp,

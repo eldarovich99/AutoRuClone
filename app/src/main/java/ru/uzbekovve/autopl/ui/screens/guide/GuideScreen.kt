@@ -39,7 +39,7 @@ fun GuideScreen(
             Text(
                 text = stringResource(id = R.string.shout_description_1),
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.h3,
+                style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(horizontal = 30.dp)
             )
         }

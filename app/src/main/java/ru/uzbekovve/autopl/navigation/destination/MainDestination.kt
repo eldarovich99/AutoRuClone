@@ -7,9 +7,19 @@ import ru.uzbekovve.autopl.ui.screens.chat.ChatId
 import ru.uzbekovve.autopl.ui.screens.main.MainScreen
 
 const val MAIN = "main"
-fun NavGraphBuilder.main(onChatClick: (ChatId) -> Unit) {
+fun NavGraphBuilder.main(
+    onChatClick: (ChatId) -> Unit,
+    onUserNameClicked: () -> Unit,
+    onAboutAppClicked: () -> Unit,
+    onLogoutClicked: () -> Unit,
+) {
     composable(MAIN) {
-        MainScreen(onChatClick)
+        MainScreen(
+            onChatClick = onChatClick,
+            onUserNameClicked = onUserNameClicked,
+            onAboutAppClicked = onAboutAppClicked,
+            onLogoutClicked = onLogoutClicked
+        )
     }
 }
 

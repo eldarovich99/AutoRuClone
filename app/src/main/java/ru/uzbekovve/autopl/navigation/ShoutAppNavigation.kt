@@ -33,7 +33,9 @@ fun ShoutAppNavigation(
         })
         main(onChatClick = { chatId ->
             navController.navigateToChat(chatId = chatId)
-        })
+        }, onUserNameClicked = { TODO() },
+            onAboutAppClicked = { TODO() },
+            onLogoutClicked = { TODO() })
         chat()
     }
 }

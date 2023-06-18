@@ -12,6 +12,11 @@
     <string name="type_username">Type your username…</string>
     <string name="done">Done</string>
     <string name="chats">Chats</string>
-    <string name="profile">Profile</string>
     <string name="avatar">Avatar</string>
+
+    <!-- Profile screen -->
+    <string name="profile">Profile</string>
+    <string name="profile_change_nickname">Change nickname</string>
+    <string name="profile_about_app">About app</string>
+    <string name="profile_logout">Logout</string>
 </resources>

@@ -50,3 +50,4 @@ val BlueGrey90 = Color(0xFFE2E1EC)
 
 val Primary = Color(red = 213, green = 190, blue = 190)
 val Grey = Color(163, 163, 163)
+val GreyBackground = Color(0xFFE5E5E5)
