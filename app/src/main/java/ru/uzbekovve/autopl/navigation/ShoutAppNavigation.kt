@@ -9,9 +9,9 @@ import ru.uzbekovve.autopl.navigation.destination.auth
 import ru.uzbekovve.autopl.navigation.destination.chat
 import ru.uzbekovve.autopl.navigation.destination.main
 import ru.uzbekovve.autopl.navigation.destination.navigateSignIn
-import ru.uzbekovve.autopl.navigation.destination.navigateToAllChats
 import ru.uzbekovve.autopl.navigation.destination.navigateToAuth
 import ru.uzbekovve.autopl.navigation.destination.navigateToChat
+import ru.uzbekovve.autopl.navigation.destination.navigateToMainScreen
 import ru.uzbekovve.autopl.navigation.destination.signIn
 
 @Composable
@@ -26,9 +26,12 @@ fun ShoutAppNavigation(
             navController.navigateToAuth()
         })
         auth(onAuthCompleted = {
-            navController.navigateToAllChats()
+            navController.navigateToMainScreen()
         })
         allChats(onChatClick = { chatId ->
+            navController.navigateToChat(chatId = chatId)
+        })
+        main(onChatClick = { chatId ->
             navController.navigateToChat(chatId = chatId)
         })
         chat()

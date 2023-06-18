@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -20,7 +21,7 @@ import ru.uzbekovve.autopl.R
 import ru.uzbekovve.autopl.ui.theme.Grey
 
 @Composable
-fun NavigationBar(modifier: Modifier) {
+fun NavigationBar(modifier: Modifier, selectedTab: NavigationTab) {
     Column(modifier) {
         Box(
             modifier = Modifier
@@ -37,7 +38,7 @@ fun NavigationBar(modifier: Modifier) {
             Image(
                 modifier = Modifier.size(25.dp),
                 painter = painterResource(id = R.drawable.ic_chat),
-                colorFilter = ColorFilter.tint(Grey), // TODO implement tab selection
+                colorFilter = ColorFilter.tint(if (selectedTab == NavigationTab.Chats) Color.Black else Grey),
                 contentDescription = stringResource(
                     id = R.string.chats
                 )
@@ -45,7 +46,7 @@ fun NavigationBar(modifier: Modifier) {
             Image(
                 modifier = Modifier.size(25.dp),
                 painter = painterResource(id = R.drawable.ic_profile),
-                colorFilter = ColorFilter.tint(Grey),
+                colorFilter = ColorFilter.tint(if (selectedTab == NavigationTab.Profile) Color.Black else Grey),
                 contentDescription = stringResource(
                     id = R.string.profile
                 )
