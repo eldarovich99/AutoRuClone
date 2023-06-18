@@ -24,5 +24,9 @@ fun NavGraphBuilder.main(
 }
 
 fun NavController.navigateToMainScreen() {
-    navigate(MAIN)
+    navigate(MAIN) {
+        popUpTo(graph.id) {
+            inclusive = true
+        }
+    }
 }

@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import ru.uzbekovve.autopl.ui.screens.auth.AuthScreen
 
-private const val AUTH_SCREEN = "auth"
+const val AUTH_SCREEN = "auth"
 
 fun NavGraphBuilder.auth(onAuthCompleted: () -> Unit) {
     composable(AUTH_SCREEN) {
