@@ -16,8 +16,6 @@ import ru.uzbekovve.autopl.ui.theme.Grey
 fun GuideIndicator(modifier: Modifier = Modifier, enabled: Boolean) =
     Box(
         modifier
-            .height(3.dp)
-            .width(47.dp)
             .clip(RoundedCornerShape(1.5.dp))
             .background(if (enabled) Color.Black else Grey)
     )

@@ -15,9 +15,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ShoutButton(modifier: Modifier = Modifier, text: String, onClick: () -> Unit) =
     Button(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(30.dp),
+        modifier = modifier,
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black),
         shape = RoundedCornerShape(30.dp)

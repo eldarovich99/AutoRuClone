@@ -4,7 +4,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -40,15 +43,30 @@ fun GuideScreen(
                 modifier = Modifier.padding(horizontal = 30.dp)
             )
         }
-        Row {
-            GuideIndicator(enabled = state.value.step == GuideStep.STEP_ONE)
+        Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
             GuideIndicator(
-                modifier = Modifier.padding(horizontal = 20.dp),
+                modifier = Modifier
+                    .height(3.dp)
+                    .width(47.dp),
+                enabled = state.value.step == GuideStep.STEP_ONE
+            )
+            GuideIndicator(
+                modifier = Modifier
+                    .height(3.dp)
+                    .width(47.dp),
                 enabled = state.value.step == GuideStep.STEP_TWO
             )
-            GuideIndicator(enabled = state.value.step == GuideStep.STEP_THREE)
+            GuideIndicator(
+                modifier = Modifier
+                    .height(3.dp)
+                    .width(47.dp),
+                enabled = state.value.step == GuideStep.STEP_THREE
+            )
         }
         ShoutButton(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(30.dp),
             text = stringResource(id = R.string.next_button),
             onClick = {
                 if (state.value.step == GuideStep.STEP_THREE) onLastFurtherClick.invoke() else

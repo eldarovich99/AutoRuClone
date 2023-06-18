@@ -106,6 +106,9 @@ dependencies {
     testImplementation("io.insert-koin:koin-test:$koinVersion")
     testImplementation("io.insert-koin:koin-android-test:$koinVersion")
 
+    // Image loading
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
     detektPlugins("com.twitter.compose.rules:detekt:0.0.26")
     detektPlugins("ru.kode:detekt-rules-compose:1.2.2")
 }

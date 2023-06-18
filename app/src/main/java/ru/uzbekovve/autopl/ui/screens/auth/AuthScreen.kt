@@ -48,7 +48,12 @@ fun AuthScreen(onAuthCompleted: () -> Unit) {
                         )
                     })
             }
-            ShoutButton(text = stringResource(id = R.string.done), onClick = onAuthCompleted)
+            ShoutButton(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(30.dp),
+                text = stringResource(id = R.string.done), onClick = onAuthCompleted
+            )
         }
     }
 }

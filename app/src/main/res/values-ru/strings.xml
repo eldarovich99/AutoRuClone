@@ -11,4 +11,7 @@
     <string name="your_username">Ваш псевдоним</string>
     <string name="type_username">Напишите псевдоним…</string>
     <string name="done">Готово</string>
+    <string name="chats">Чаты</string>
+    <string name="profile">Профиль</string>
+    <string name="avatar">Аватар</string>
 </resources>
