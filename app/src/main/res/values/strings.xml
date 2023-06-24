@@ -19,4 +19,12 @@
     <string name="profile_change_nickname">Change nickname</string>
     <string name="profile_about_app">About app</string>
     <string name="profile_logout">Logout</string>
+
+    <!-- About app -->
+    <string name="about_app_main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="about_app_subtitle">Lorem ipsum dolor sit amet, consectetur elit, sed do cons ectetur adipiscing eli...Lorem ipsum dolor sit amet, consectetf</string>
+    <string name="about_app_support">Support</string>
+
+    <!-- Content descriptions -->
+    <string name="back">Back</string>
 </resources>

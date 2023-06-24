@@ -4,11 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import ru.uzbekovve.autopl.navigation.destination.GUIDE_SCREEN
+import ru.uzbekovve.autopl.navigation.destination.aboutApp
 import ru.uzbekovve.autopl.navigation.destination.allChats
 import ru.uzbekovve.autopl.navigation.destination.auth
 import ru.uzbekovve.autopl.navigation.destination.chat
 import ru.uzbekovve.autopl.navigation.destination.main
 import ru.uzbekovve.autopl.navigation.destination.navigateSignIn
+import ru.uzbekovve.autopl.navigation.destination.navigateToAboutApp
 import ru.uzbekovve.autopl.navigation.destination.navigateToAuth
 import ru.uzbekovve.autopl.navigation.destination.navigateToChat
 import ru.uzbekovve.autopl.navigation.destination.navigateToMainScreen
@@ -34,8 +36,13 @@ fun ShoutAppNavigation(
         main(onChatClick = { chatId ->
             navController.navigateToChat(chatId = chatId)
         }, onUserNameClicked = { TODO() },
-            onAboutAppClicked = { TODO() },
+            onAboutAppClicked = {
+                navController.navigateToAboutApp()
+            },
             onLogoutClicked = { TODO() })
         chat()
+        aboutApp {
+            navController.popBackStack()
+        }
     }
 }
