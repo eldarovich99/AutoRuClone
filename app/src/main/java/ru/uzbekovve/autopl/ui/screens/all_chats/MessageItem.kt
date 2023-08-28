@@ -5,10 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -26,12 +24,11 @@ import ru.uzbekovve.autopl.R
 import ru.uzbekovve.autopl.ui.screens.all_chats.model.ChatUiModelShort
 import ru.uzbekovve.autopl.ui.theme.AutoPlTheme
 
-
 @Composable
 fun MessageItem(modifier: Modifier = Modifier, chatUiModel: ChatUiModelShort) {
     Row(
         modifier = modifier.padding(horizontal = 20.dp),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         AsyncImage(
             model = chatUiModel.imageUrl,
@@ -39,22 +36,22 @@ fun MessageItem(modifier: Modifier = Modifier, chatUiModel: ChatUiModelShort) {
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(67.dp)
-                .clip(CircleShape)
+                .clip(CircleShape),
         )
         Column(
             modifier = Modifier
                 .weight(1f)
                 .padding(start = 15.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp)
+            verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
             Text(text = chatUiModel.title, style = MaterialTheme.typography.body1)
-            Text(text = chatUiModel.lastMessage, style = MaterialTheme.typography.subtitle1)
+            Text(text = chatUiModel.lastMessage, style = MaterialTheme.typography.subtitle2)
         }
         Box(
             modifier = Modifier
                 .size(5.dp)
                 .clip(CircleShape)
-                .background(Color.Black)
+                .background(Color.Black),
         )
     }
 }
@@ -69,8 +66,8 @@ fun PreviewMessageItem() {
                 "name_1",
                 "last message text",
                 false,
-                "https://f30.bimmerpost.com/forums/attachment.php?attachmentid=1290197&d=1443528193"
-            )
+                "https://f30.bimmerpost.com/forums/attachment.php?attachmentid=1290197&d=1443528193",
+            ),
         )
     }
 }

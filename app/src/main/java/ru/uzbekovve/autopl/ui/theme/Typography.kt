@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.sp
 import ru.uzbekovve.autopl.R
 
 val fontsManrope = FontFamily(
-    Font(R.font.manrope)
+    Font(R.font.manrope),
 )
 
 // Set of Material typography styles to start with
@@ -19,44 +19,50 @@ val Typography = Typography(
         fontFamily = fontsManrope,
         fontSize = 48.sp,
         fontWeight = FontWeight.W700,
-        color = Color.Black
+        color = Color.Black,
     ),
     h2 = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 24.sp,
         fontWeight = FontWeight.W700,
-        color = Color.Black
+        color = Color.Black,
     ),
     h3 = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 20.sp,
         fontWeight = FontWeight.W700,
-        color = Color.Black
+        color = Color.Black,
     ),
     h4 = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 20.sp,
         fontWeight = FontWeight.W700,
-        color = Color.Black
+        color = Color.Black,
     ),
     button = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 18.sp,
         fontWeight = FontWeight.W700,
-        color = Color.Black
+        color = Color.Black,
     ),
     body1 = TextStyle(
         fontFamily = fontsManrope,
         fontSize = 16.sp,
         fontWeight = FontWeight.W600,
-        color = Color.Black
+        color = Color.Black,
     ),
     subtitle1 = TextStyle(
         fontFamily = fontsManrope,
+        fontSize = 17.sp,
+        fontWeight = FontWeight.W600,
+        color = Grey,
+    ),
+    subtitle2 = TextStyle(
+        fontFamily = fontsManrope,
         fontSize = 14.sp,
         fontWeight = FontWeight.W600,
-        color = Grey
-    )
+        color = Grey,
+    ),
     /* Other default text styles to override
     button = TextStyle(
         fontFamily = FontFamily.Default,

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -25,26 +26,28 @@ import ru.uzbekovve.autopl.ui.screens.chat.ChatId
 fun AllChatsScreen(
     onChatClick: (ChatId) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: AllChatsViewModel = koinNavViewModel()
+    viewModel: AllChatsViewModel = koinNavViewModel(),
 ) {
     val state = viewModel.stateFlow.collectAsState()
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         SimpleToolbar(modifier = Modifier.padding(bottom = 16.dp), stringRes = R.string.chats)
         Box(
             Modifier
                 .height(1.dp)
                 .fillMaxWidth()
-                .background(colorResource(id = R.color.grey))
+                .background(colorResource(id = R.color.grey)),
         )
         if (state.value is AllChatsState.Loaded) {
+            val listState = rememberLazyListState()
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .weight(1f)
                     .padding(top = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 itemsIndexed((state.value as AllChatsState.Loaded).chats) { index, chatUiModel ->
                     MessageItem(
@@ -53,7 +56,7 @@ fun AllChatsScreen(
                             .clickable {
                                 onChatClick.invoke(chatUiModel.id)
                             },
-                        chatUiModel = chatUiModel
+                        chatUiModel = chatUiModel,
                     )
                 }
             }
